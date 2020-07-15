@@ -5,5 +5,7 @@ export interface DemandeDeStage {
   TYPE_DEMANDE:string;
   ETAT_DEMANDE:string;
   ETUDIANT_DEMANDE:string;
+  created_at:Date;
+  updated_at:Date;
 
 }

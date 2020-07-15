@@ -1,1 +1,120 @@
-<p>ajouter works!</p>
+
+<div class="card card-custom">
+  <div class="card-header">
+   <h3 class="card-title">
+    Ajouter une demande de stage
+  </h3>
+  </div>
+   <div class="card-body">
+    <div class="form-group row">
+     <label  class="col-2 col-form-label">Organisme d'acceuil</label>
+     <div class="col-10">
+      <input class="form-control" type="text" placeholder="Organisme d'acceuil" [(ngModel)]="organisme_acceuil" />
+     </div>
+    </div>
+   </div>
+   <div class="card-footer">
+    <div class="row">
+     <div class="col-2">
+     </div>
+     <div class="col-10">
+      <button type="submit" class="btn btn-success mr-2" (click)="demande_post()" >Submit</button>
+      <button type="reset" class="btn btn-secondary">Cancel</button>
+     </div>
+     <h1>{{error}}</h1>
+    </div>
+   </div>
+ </div>
+
+ <div class="content flex-column-fluid" id="kt_content">
+  <!--begin::Row-->
+  <div class="row">
+    <div class="col-xl-6">
+      <!--begin::Engage Widget 1-->
+      <div class="card card-custom card-stretch gutter-b">
+        <div class="card-body d-flex p-0">
+          <div class="flex-grow-1 p-8 card-rounded bgi-no-repeat d-flex align-items-center" style="background-color: #FFF4DE; background-position: left bottom; background-size: auto 100%; background-image: url(assets/media/svg/humans/custom-2.svg)">
+            <div class="row">
+              <div class="col-12 col-xl-5"></div>
+              <div class="col-12 col-xl-7">
+                <h4 class="text-danger font-weight-bolder">Le stage d'été est facultatif,
+                </h4>
+                <p class="text-dark-50 my-5 font-size-xl font-weight-bold">Mais il est fortement recommandé aux étudiants de faire des stages d'été pour améliorer leur employabilité.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end::Engage Widget 1-->
+    </div>
+    <div class="col-xl-3">
+      <!--begin::Engage Widget 2-->
+      <div class="card card-custom card-stretch gutter-b">
+        <div class="card-body d-flex p-0">
+          <div class="flex-grow-1 bg-danger p-8 card-rounded flex-grow-1 bgi-no-repeat" style="background-position: calc(100% + 0.5rem) bottom; background-size: auto 70%; background-image: url(assets/media/svg/humans/custom-3.svg)">
+            <h4 class="text-inverse-danger mt-2 font-weight-bolder">Stage PFE</h4>
+            <p class="text-inverse-danger my-6">Le projet de fin d’études est l’aboutissement de
+            <br />la formation en mastère au sein de l’ISG de Tunis.</p>
+          </div>
+        </div>
+      </div>
+      <!--end::Engage Widget 2-->
+    </div>
+    <div class="col-xl-3">
+      <!--begin::Engage Widget 3-->
+      <div class="card card-custom card-stretch gutter-b">
+        <div class="card-body d-flex p-0 card-rounded">
+          <div class="flex-grow-1 p-10 card-rounded flex-grow-1 bgi-no-repeat" style="background-color: #663259; background-position: calc(100% + 0.5rem) bottom; background-size: auto 75%; background-image: url(assets/media/svg/humans/custom-4.svg)">
+            <h4 class="text-inverse-danger mt-2 font-weight-bolder">Stages:</h4>
+            <div class="mt-5">
+              <div class="d-flex mb-5">
+                <span class="svg-icon svg-icon-md svg-icon-white flex-shrink-0 mr-3">
+                  <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Arrow-right.svg-->
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <polygon points="0 0 24 0 24 24 0 24" />
+                      <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)" x="11" y="5" width="2" height="14" rx="1" />
+                      <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)" />
+                    </g>
+                  </svg>
+                  <!--end::Svg Icon-->
+                </span>
+                <span class="text-white">Licences</span>
+              </div>
+              <div class="d-flex mb-5">
+                <span class="svg-icon svg-icon-md svg-icon-white flex-shrink-0 mr-3">
+                  <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Arrow-right.svg-->
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <polygon points="0 0 24 0 24 24 0 24" />
+                      <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)" x="11" y="5" width="2" height="14" rx="1" />
+                      <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)" />
+                    </g>
+                  </svg>
+                  <!--end::Svg Icon-->
+                </span>
+                <span class="text-white">Mastéres</span>
+              </div>
+              <div class="d-flex">
+                <span class="svg-icon svg-icon-md svg-icon-white flex-shrink-0 mr-3">
+                  <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Arrow-right.svg-->
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <polygon points="0 0 24 0 24 24 0 24" />
+                      <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)" x="11" y="5" width="2" height="14" rx="1" />
+                      <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)" />
+                    </g>
+                  </svg>
+                  <!--end::Svg Icon-->
+                </span>
+                <span class="text-white">D'été</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end::Engage Widget 3-->
+    </div>
+  </div>
+  <!--end::Row-->
+</div>

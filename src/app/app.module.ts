@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AuthentificationService } from './services/authentification.service';
+import { DemandeEtudiantService } from './services/demande-etudiant.service';
 
 @NgModule({
   declarations: [
@@ -19,9 +20,10 @@ import { AuthentificationService } from './services/authentification.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+
   ],
-  providers: [AuthentificationService],
+  providers: [AuthentificationService,DemandeEtudiantService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,9 +7,13 @@ export interface Stage {
   FAX_STAGE:string;
   EMAIL_STAGE:string;
   ENCADRANT_STAGE:string;
-  DATE_DEBUT:string;
-  DATE_FIN:string;
+  ENCADRANT_EMAIL:string;
+  DATE_DEBUT:Date;
+  DATE_FIN:Date;
   ETUDIANT_ID:string;
+  ADRESSE:string;
+  DESCRIPTION:string;
+  TELEPHONE:string;
 
 
 }
