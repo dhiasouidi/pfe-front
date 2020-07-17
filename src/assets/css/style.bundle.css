@@ -54048,6 +54048,7 @@ code {
         flex-shrink: 0;
         margin-right: 0.75rem; }
       .navi .navi-item .navi-link .navi-text {
+        cursor: pointer;
         -webkit-box-flex: 1;
         -ms-flex-positive: 1;
         flex-grow: 1; }

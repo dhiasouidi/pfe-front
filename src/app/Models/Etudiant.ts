@@ -1,6 +1,7 @@
 export interface Etudiant {
 
   CIN_PASSEPORT:string;
+  NUM_INSCRIPTION:string;
   NOM:string;
   PRENOM:string;
   DATE_NAISSAINCE:Date;

@@ -56,7 +56,12 @@
 
 								<div class="pb-lg-0 pb-5">
 									<button type="button" id="" class="btn btn-success btn-shadow font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3" (click)="login()">Connecter</button>
-								</div>
+                  <div class="spinner-border text-success" role="status" [hidden]="!spin">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <h5>{{error}}</h5>
+                </div>
+
 								<!--end::Action-->
 							</div>
 							<!--end::Form-->

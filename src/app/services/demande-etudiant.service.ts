@@ -12,7 +12,6 @@ export class DemandeEtudiantService {
   constructor(private _http:HttpClient) { }
   header={
     headers:new HttpHeaders({
-      "Access-Control-Allow-Origin":"*",
       "Authorization":"Bearer "+localStorage.getItem('token')
 
     })
@@ -21,7 +20,7 @@ export class DemandeEtudiantService {
   return  this._http.post<DemandeDeStage>(apiUrl+'demandesave',body,this.header);
   }
 
-  getall():Observable<any>{
-    return  this._http.get(apiUrl+'mesdemandes',this.header);
+  getall():Observable<[DemandeDeStage]>{
+    return  this._http.get<[DemandeDeStage]>(apiUrl+'mesdemandes',this.header);
     }
 }

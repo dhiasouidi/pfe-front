@@ -41,7 +41,7 @@
 							<!--begin::Left-->
 							<div class="d-none d-lg-flex align-items-center mr-3">
 								<!--begin::Logo-->
-								<a [routerLink]="['/etudiant/']" class="mr-30">
+								<a [routerLink]="['/admin/']" class="mr-30">
 									<img alt="Logo" src="assets/media/logos/isg.png" class="logo-default max-h-50px" />
 								</a>
 								<!--end::Logo-->
@@ -52,7 +52,7 @@
 								<!--begin::User-->
 								<div class="dropdown">
 									<!--begin::Toggle-->
-									<a class="topbar-item" data-toggle="dropdown" data-offset="0px,0px" (click)="logout()">
+									<a class="topbar-item" data-toggle="dropdown" data-offset="0px,0px" >
 										<div class="btn btn-icon btn-clean h-40px w-40px btn-dropdown">
 											<span class="svg-icon svg-icon-lg">
 												<!--begin::Svg Icon | path:assets/media/svg/icons/General/User.svg-->
@@ -79,7 +79,6 @@
 											<!--end::Symbol-->
 											<!--begin::Text-->
 											<div class="text-dark m-0 flex-grow-1 mr-3 font-size-h5">Sean Stone</div>
-											<span class="label label-light-success label-lg font-weight-bold label-inline">3 messages</span>
 											<!--end::Text-->
 										</div>
 										<div class="separator separator-solid"></div>
@@ -87,54 +86,13 @@
 										<!--begin::Nav-->
 										<div class="navi navi-spacer-x-0 pt-5">
 											<!--begin::Item-->
-											<a href="custom/apps/user/profile-1/personal-information.html" class="navi-item px-8">
+											<a [routerLink]="['/admin/profile']" class="navi-item px-8">
 												<div class="navi-link">
 													<div class="navi-icon mr-2">
 														<i class="flaticon2-calendar-3 text-success"></i>
 													</div>
 													<div class="navi-text">
 														<div class="font-weight-bold">My Profile</div>
-														<div class="text-muted">Account settings and more
-														<span class="label label-light-danger label-inline font-weight-bold">update</span></div>
-													</div>
-												</div>
-											</a>
-											<!--end::Item-->
-											<!--begin::Item-->
-											<a href="custom/apps/user/profile-3.html" class="navi-item px-8">
-												<div class="navi-link">
-													<div class="navi-icon mr-2">
-														<i class="flaticon2-mail text-warning"></i>
-													</div>
-													<div class="navi-text">
-														<div class="font-weight-bold">My Messages</div>
-														<div class="text-muted">Inbox and tasks</div>
-													</div>
-												</div>
-											</a>
-											<!--end::Item-->
-											<!--begin::Item-->
-											<a href="custom/apps/user/profile-2.html" class="navi-item px-8">
-												<div class="navi-link">
-													<div class="navi-icon mr-2">
-														<i class="flaticon2-rocket-1 text-danger"></i>
-													</div>
-													<div class="navi-text">
-														<div class="font-weight-bold">My Activities</div>
-														<div class="text-muted">Logs and notifications</div>
-													</div>
-												</div>
-											</a>
-											<!--end::Item-->
-											<!--begin::Item-->
-											<a href="custom/apps/userprofile-1/overview.html" class="navi-item px-8">
-												<div class="navi-link">
-													<div class="navi-icon mr-2">
-														<i class="flaticon2-hourglass text-primary"></i>
-													</div>
-													<div class="navi-text">
-														<div class="font-weight-bold">My Tasks</div>
-														<div class="text-muted">latest tasks and projects</div>
 													</div>
 												</div>
 											</a>
@@ -142,8 +100,7 @@
 											<!--begin::Footer-->
 											<div class="navi-separator mt-3"></div>
 											<div class="navi-footer px-8 py-5">
-												<a href="custom/user/login-v2.html" target="_blank" class="btn btn-light-primary font-weight-bold">Sign Out</a>
-												<a href="custom/user/login-v2.html" target="_blank" class="btn btn-clean font-weight-bold">Upgrade Plan</a>
+												<a href="custom/user/login-v2.html" target="_blank" class="btn btn-light-primary font-weight-bold" (click)="logout()">Sign Out</a>
 											</div>
 											<!--end::Footer-->
 										</div>
@@ -166,155 +123,19 @@
 								<!--begin::Header Nav-->
 								<ul class="menu-nav">
 									<li class="menu-item menu-item-open menu-item-here menu-item-submenu menu-item-rel menu-item-open menu-item-here" data-menu-toggle="click" aria-haspopup="true">
-										<a [routerLink]="['/etudiant/']" class="menu-link menu-toggle">
+										<a [routerLink]="['/admin/']" class="menu-link menu-toggle">
 											<span class="menu-text">Tableau de board</span>
 										</a>
                   </li>
                   <!-- demandes de stages menu -->
-									<li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true" *ngIf="infos['AFFECTATION'] != 'A'">
+									<li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true" [routerLink]="['/admin/demandes-stages']">
 										<a href="javascript:;" class="menu-link menu-toggle">
-											<span class="menu-text">Demande de stage</span>
-											<span class="menu-desc"></span>
-											<i class="menu-arrow"></i>
-										</a>
-										<div class="menu-submenu menu-submenu-classic menu-submenu-left">
-											<ul class="menu-subnav">
-												<li class="menu-item menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true">
-													<a href="javascript:;" class="menu-link menu-toggle">
-														<span class="svg-icon menu-icon">
-															<!--begin::Svg Icon | path:assets/media/svg/icons/Files/Pictures1.svg-->
-															<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-																<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-																	<rect x="0" y="0" width="24" height="24" />
-																	<path d="M3.5,21 L20.5,21 C21.3284271,21 22,20.3284271 22,19.5 L22,8.5 C22,7.67157288 21.3284271,7 20.5,7 L10,7 L7.43933983,4.43933983 C7.15803526,4.15803526 6.77650439,4 6.37867966,4 L3.5,4 C2.67157288,4 2,4.67157288 2,5.5 L2,19.5 C2,20.3284271 2.67157288,21 3.5,21 Z" fill="#000000" opacity="0.3" />
-																	<polygon fill="#000000" opacity="0.3" points="4 19 10 11 16 19" />
-																	<polygon fill="#000000" points="11 19 15 14 19 19" />
-																	<path d="M18,12 C18.8284271,12 19.5,11.3284271 19.5,10.5 C19.5,9.67157288 18.8284271,9 18,9 C17.1715729,9 16.5,9.67157288 16.5,10.5 C16.5,11.3284271 17.1715729,12 18,12 Z" fill="#000000" opacity="0.3" />
-																</g>
-															</svg>
-															<!--end::Svg Icon-->
-														</span>
-														<span class="menu-text">Demande de stage</span>
-														<i class="menu-arrow"></i>
-													</a>
-													<div class="menu-submenu menu-submenu-classic menu-submenu-right">
-														<ul class="menu-subnav">
-															<li  class="menu-item" aria-haspopup="true">
-																<a [routerLink]="['/etudiant/demandes/ajouter']" class="menu-link">
-																	<i class="menu-bullet menu-bullet-dot">
-																		<span></span>
-																	</i>
-																	<span class="menu-text">Ajouter une demande</span>
-																</a>
-															</li>
-															<li class="menu-item" aria-haspopup="true">
-																<a  [routerLink]="['/etudiant/demandes/consulter']" class="menu-link">
-																	<i class="menu-bullet menu-bullet-dot">
-																		<span></span>
-																	</i>
-																	<span class="menu-text">Consulter mes demandes</span>
-																</a>
-															</li>
-														</ul>
-                          </div>
-                        </li>
-											</ul>
-                    </div>
-
-                  </li>
-                  <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true" *ngIf="infos['AFFECTATION'] == 'A'">
-										<a [routerLink]="['/etudiant/stage/consulter']" class="menu-link menu-toggle">
-											<span class="menu-text">Stage</span>
-											<span class="menu-desc"></span>
-										</a>
-                  </li>
-                  <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true" *ngIf="infos['SUJET_ID'] != null " >
-										<a href="javascript:;" class="menu-link menu-toggle">
-											<span class="menu-text">Sujet</span>
-											<span class="menu-desc"></span>
-											<i class="menu-arrow"></i>
-										</a>
-										<div class="menu-submenu menu-submenu-classic menu-submenu-left">
-											<ul class="menu-subnav">
-												<li class="menu-item menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true">
-													<a href="javascript:;" class="menu-link menu-toggle">
-														<span class="svg-icon menu-icon">
-															<!--begin::Svg Icon | path:assets/media/svg/icons/Files/Pictures1.svg-->
-															<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-																<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-																	<rect x="0" y="0" width="24" height="24" />
-																	<path d="M3.5,21 L20.5,21 C21.3284271,21 22,20.3284271 22,19.5 L22,8.5 C22,7.67157288 21.3284271,7 20.5,7 L10,7 L7.43933983,4.43933983 C7.15803526,4.15803526 6.77650439,4 6.37867966,4 L3.5,4 C2.67157288,4 2,4.67157288 2,5.5 L2,19.5 C2,20.3284271 2.67157288,21 3.5,21 Z" fill="#000000" opacity="0.3" />
-																	<polygon fill="#000000" opacity="0.3" points="4 19 10 11 16 19" />
-																	<polygon fill="#000000" points="11 19 15 14 19 19" />
-																	<path d="M18,12 C18.8284271,12 19.5,11.3284271 19.5,10.5 C19.5,9.67157288 18.8284271,9 18,9 C17.1715729,9 16.5,9.67157288 16.5,10.5 C16.5,11.3284271 17.1715729,12 18,12 Z" fill="#000000" opacity="0.3" />
-																</g>
-															</svg>
-															<!--end::Svg Icon-->
-														</span>
-														<span class="menu-text">Gérer mon sujet</span>
-														<i class="menu-arrow"></i>
-													</a>
-													<div class="menu-submenu menu-submenu-classic menu-submenu-right">
-														<ul class="menu-subnav">
-															<li class="menu-item" aria-haspopup="true">
-																<a [routerLink]="['/etudiant/ajouter']" class="menu-link">
-																	<i class="menu-bullet menu-bullet-dot">
-																		<span></span>
-																	</i>
-																	<span class="menu-text">Créer un sujet</span>
-																</a>
-															</li>
-															<li class="menu-item" aria-haspopup="true">
-																<a  [routerLink]="['/etudiant/consulter']" class="menu-link">
-																	<i class="menu-bullet menu-bullet-dot">
-																		<span></span>
-																	</i>
-																	<span class="menu-text">Ajouter binome</span>
-																</a>
-                              </li>
-                              <li class="menu-item" aria-haspopup="true">
-																<a  [routerLink]="['/etudiant/consulter']" class="menu-link">
-																	<i class="menu-bullet menu-bullet-dot">
-																		<span></span>
-																	</i>
-																	<span class="menu-text">Ajouter encadrant</span>
-																</a>
-															</li>
-														</ul>
-                          </div>
-
-												</li>
-                          <li class="menu-item menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true">
-                            <a href="javascript:;" class="menu-link menu-toggle">
-                              <span class="svg-icon menu-icon">
-                                <!--begin::Svg Icon | path:assets/media/svg/icons/Files/Pictures1.svg-->
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <rect x="0" y="0" width="24" height="24" />
-                                    <path d="M3.5,21 L20.5,21 C21.3284271,21 22,20.3284271 22,19.5 L22,8.5 C22,7.67157288 21.3284271,7 20.5,7 L10,7 L7.43933983,4.43933983 C7.15803526,4.15803526 6.77650439,4 6.37867966,4 L3.5,4 C2.67157288,4 2,4.67157288 2,5.5 L2,19.5 C2,20.3284271 2.67157288,21 3.5,21 Z" fill="#000000" opacity="0.3" />
-                                    <polygon fill="#000000" opacity="0.3" points="4 19 10 11 16 19" />
-                                    <polygon fill="#000000" points="11 19 15 14 19 19" />
-                                    <path d="M18,12 C18.8284271,12 19.5,11.3284271 19.5,10.5 C19.5,9.67157288 18.8284271,9 18,9 C17.1715729,9 16.5,9.67157288 16.5,10.5 C16.5,11.3284271 17.1715729,12 18,12 Z" fill="#000000" opacity="0.3" />
-                                  </g>
-                                </svg>
-                                <!--end::Svg Icon-->
-                              </span>
-                              <span class="menu-text">Consulter mon sujet</span>
-                            </a>
-
-                          </li>
-											</ul>
-                    </div>
-
-                  </li>
-                  <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
-										<a href="javascript:;" class="menu-link menu-toggle">
-											<span class="menu-text">Soutenance</span>
+											<span class="menu-text">Demandes de stages</span>
 											<span class="menu-desc"></span>
 										</a>
                   </li>
                   <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
-										<a [routerLink]="['/etudiant/profile']" class="menu-link menu-toggle">
+										<a [routerLink]="['/admin/profile']" class="menu-link menu-toggle">
 											<span class="menu-text">Profile</span>
 											<span class="menu-desc"></span>
 										</a>

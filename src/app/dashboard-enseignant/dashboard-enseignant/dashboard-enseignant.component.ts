@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-enseignant',
@@ -7,19 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardEnseignantComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _Router:Router) { }
 
   ngOnInit(): void {
     let role=localStorage.getItem("role");
-    console.log(role)
-
     if (role !="enseignant"){
-      console.log(role)
-      window.location.replace("http://localhost:4200/"+role)
-      //this._Router.navigate(['/enseignant'])
-
-
-
+      this._Router.navigate(['/'+role])
     }
   }
 
