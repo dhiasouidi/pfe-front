@@ -8,33 +8,15 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './consulter.component.html',
   styleUrls: ['./consulter.component.css']
 })
-export class ConsulterComponent  implements OnInit,AfterViewInit{
+export class ConsulterComponent  implements OnInit{
 
-  test
-  constructor(private _DemandeService:DemandeEtudiantService,private _route:ActivatedRoute) {
+  constructor(private _DemandeService:DemandeEtudiantService,private _route:ActivatedRoute) { }
 
-
-
-
-  }
   demandes:[DemandeDeStage]
-
-  ngAfterViewInit(){
-    this._DemandeService.getall().subscribe((demandes:[DemandeDeStage])=>{
-      this.demandes=demandes
-      this.test=true
-      console.log(demandes)
-
-
-      });
-}
    ngOnInit() {
+
     this._DemandeService.getall().subscribe((demandes:[DemandeDeStage])=>{
       this.demandes=demandes
-      this.test=true
-      console.log(demandes)
-
-
       });
   }
 
