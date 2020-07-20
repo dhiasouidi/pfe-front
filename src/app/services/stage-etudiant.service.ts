@@ -21,8 +21,9 @@ export class StageEtudiantService {
   get():Observable<any>{
     return  this._http.get(apiUrl+'getstageetudiant',this.header);
     }
-  update(stage:Stage):Observable<Stage>
+
+  update(body):Observable<Stage>
     {
-        return this._http.put<Stage>(apiUrl+'stage/complete', stage);
+        return this._http.post<Stage>(apiUrl+'stage/complete',body,this.header);
     }
 }

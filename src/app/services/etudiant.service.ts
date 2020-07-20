@@ -3,6 +3,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { apiUrl } from 'src/config';
 import { Observable } from 'rxjs';
 import { Etudiant } from '../Models/Etudiant';
+import { Sujet } from '../Models/Sujet';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,14 @@ export class EtudiantService {
   get():Observable<Etudiant>{
     return  this._http.get<Etudiant>(apiUrl+'currentetudiant',this.header);
     }
+    getall():Observable<[Etudiant]>{
+      return this._http.get<[Etudiant]>(apiUrl+'etudiantall',this.header)
+    }
+
+    getsujet():Observable<Sujet>{
+      return  this._http.get<Sujet>(apiUrl+'monsujet',this.header);
+      }
+
     update(body){
       return  this._http.put(apiUrl+'updateinfos',body,this.header);
       }

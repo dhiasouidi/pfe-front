@@ -15,6 +15,8 @@ export class AjouterComponent implements OnInit {
   }
   organisme_acceuil:string;
   error:string
+  success=false;
+  fail=false;
   ngOnInit(): void {
   }
 
@@ -24,12 +26,17 @@ export class AjouterComponent implements OnInit {
 
     }
     this._DemandeService.ajouter(body).subscribe( (demande:DemandeDeStage)=>{
-      console.log(demande)
-    },(err)=>{
-      console.log(err)
-this.error=err.error.message
+      this.fail=false;
+      this.success=true;
+        },(err)=>{
+          if(err.status == 400){
+            this.error= 'Demande existe déjà';
+          }
+          else
+          {
+            this.error=err.error.message
+          }
+          this.fail=true;
     })
-
-
   }
 }

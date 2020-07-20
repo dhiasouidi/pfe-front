@@ -6,11 +6,8 @@ import { DashboardEtudiantRoutingModule } from './dashboard-etudiant-routing.mod
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AjouterComponent } from './demandes/ajouter/ajouter.component';
 import { ConsulterComponent } from './demandes/consulter/consulter.component';
-import { AfficherComponent } from './demandes/afficher/afficher.component';
-import { DeposerComponent } from './soutenance/deposer/deposer.component';
 import { ModifierComponent } from './profile/modifier/modifier.component';
 import { ChangerMdpComponent } from './profile/changer-mdp/changer-mdp.component';
-import { ImprimerComponent } from './demandes/imprimer/imprimer.component';
 import { JournalComponent } from './documentation/journal/journal.component';
 import { ConventionComponent } from './documentation/convention/convention.component';
 import { LettreaffectationComponent } from './documentation/lettreaffectation/lettreaffectation.component';
@@ -20,10 +17,17 @@ import { ConsulterStageComponent } from './stage/consulter-stage/consulter-stage
 import { CompleterInfoStageComponent } from './stage/completer-info-stage/completer-info-stage.component';
 import { ConsulterProfileComponent } from './profile/consulter-profile/consulter-profile.component';
 import { OverviewProfileComponent } from './profile/overview-profile/overview-profile.component';
+import { ReclamerComponent } from './reclamer/reclamer.component';
+import { DepotComponent } from './depot/depot.component';
+import { SoutenanceComponent } from './soutenance/soutenance.component';
+import { AjouterBinomeComponent } from './sujet/binome/ajouter-binome/ajouter-binome.component';
+import { AfficherBinomeComponent } from './sujet/binome/afficher-binome/afficher-binome.component';
+import { AjouterEncadrantComponent } from './sujet/encadrant/ajouter-encadrant/ajouter-encadrant.component';
+import { AfficherEncadrantComponent } from './sujet/encadrant/afficher-encadrant/afficher-encadrant.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent,AjouterComponent, ConsulterComponent, AfficherComponent, DeposerComponent, ModifierComponent, ChangerMdpComponent, ImprimerComponent, JournalComponent, ConventionComponent, LettreaffectationComponent, AcceuilEtudiantComponent, ConsulterSujetComponent, ConsulterStageComponent, CompleterInfoStageComponent, ConsulterProfileComponent, OverviewProfileComponent],
+  declarations: [DashboardComponent,AjouterComponent, ConsulterComponent,  SoutenanceComponent, ModifierComponent, ChangerMdpComponent, JournalComponent, ConventionComponent, LettreaffectationComponent, AcceuilEtudiantComponent, ConsulterSujetComponent, ConsulterStageComponent, CompleterInfoStageComponent, ConsulterProfileComponent, OverviewProfileComponent, ReclamerComponent, DepotComponent, AjouterBinomeComponent, AfficherBinomeComponent, AjouterEncadrantComponent, AfficherEncadrantComponent],
   imports: [
     CommonModule,
     DashboardEtudiantRoutingModule,

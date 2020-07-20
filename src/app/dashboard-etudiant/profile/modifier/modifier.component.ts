@@ -21,8 +21,8 @@ export class ModifierComponent implements OnInit {
   niveau:string;
   telephone:string;
   email:string;
-  skype:string="";
-  linkedin:string="";
+  skype:string="NOT SET";
+  linkedin:string="NOT SET";
 
 
 

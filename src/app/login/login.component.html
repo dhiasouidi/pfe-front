@@ -59,8 +59,15 @@
                   <div class="spinner-border text-success" role="status" [hidden]="!spin">
                     <span class="sr-only">Loading...</span>
                   </div>
-                  <h5>{{error}}</h5>
-                </div>
+                  <div class="alert alert-custom alert-notice alert-light-danger fade show" role="alert" *ngIf="error">
+                    <div class="alert-icon"><i class="flaticon-warning"></i></div>
+                    <div class="alert-text">{{error}}</div>
+                    <div class="alert-close">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true"><i class="ki ki-close"></i></span>
+                        </button>
+                    </div>
+                </div>                </div>
 
 								<!--end::Action-->
 							</div>

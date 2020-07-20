@@ -9,4 +9,5 @@ export interface Sujet {
   ENCADRANT:string;
   STATUT_ENCADRANT:string;
   DATE_DEPOT:Date;
+  DEPOSE:boolean;
 }

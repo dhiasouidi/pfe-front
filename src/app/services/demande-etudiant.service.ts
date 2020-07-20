@@ -23,4 +23,8 @@ export class DemandeEtudiantService {
   getall():Observable<[DemandeDeStage]>{
     return  this._http.get<[DemandeDeStage]>(apiUrl+'mesdemandes',this.header);
     }
+
+    print(id):Observable<any>{
+      return this._http.get<any>(apiUrl+'demande/print/'+id,this.header);
+    }
 }

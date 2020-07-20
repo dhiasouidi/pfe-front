@@ -11,6 +11,12 @@ export class ConsulterProfileComponent implements OnInit {
   click1=true;
   click2=false;
   click3=false;
+  infos = JSON.parse(localStorage.getItem('userinfo'));
+  email = localStorage.getItem('email');
+  nom = this.infos['PRENOM']+this.infos['NOM'];
+  sexe = this.infos['SEXE'].trim();
+  role = localStorage.getItem('role').charAt(0).toUpperCase() + localStorage.getItem('role').slice(1);;
+
 
   ngOnInit(): void {
   }

@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthentificationService } from './services/authentification.service';
 import { DemandeEtudiantService } from './services/demande-etudiant.service';
 import { EtudiantService } from './services/etudiant.service';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,8 @@ import { EtudiantService } from './services/etudiant.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-
   ],
-  providers: [AuthentificationService,DemandeEtudiantService,EtudiantService],
+  providers: [AuthentificationService,DemandeEtudiantService,EtudiantService,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

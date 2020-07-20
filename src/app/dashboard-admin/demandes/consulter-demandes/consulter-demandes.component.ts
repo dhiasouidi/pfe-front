@@ -19,11 +19,18 @@ export class ConsulterDemandesComponent implements OnInit {
 
 }
 
-affecter(id: number)
+modelid;
+modelindex;
+setModelData(id,i){
+this.modelid=id;
+this.modelindex=i;
+}
+affecter(id: number,i)
   {
     this._DemandeService.affecter(id).subscribe(
       data=>{
-
+        if (data)
+        this.demandes[i].ETAT_DEMANDE='A'
       },error => console.log(error)
 
     )

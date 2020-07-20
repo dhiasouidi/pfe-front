@@ -5,11 +5,19 @@
     Ajouter une demande de stage
   </h3>
   </div>
+  <form ngNativeValidate #loginForm="ngForm" (ngSubmit)="demande_post()" class="m-t" role="form" action="#">
+
    <div class="card-body">
     <div class="form-group row">
      <label  class="col-2 col-form-label">Organisme d'acceuil</label>
      <div class="col-10">
-      <input class="form-control" type="text" placeholder="Organisme d'acceuil" [(ngModel)]="organisme_acceuil" />
+      <input class="form-control" type="text" placeholder="Organisme d'acceuil" name="organisme_acceuil" [(ngModel)]="organisme_acceuil" pattern="[A-z ]+" required/>
+      <br/>
+      <div class="alert alert-success" role="alert" *ngIf="success">
+        Demande ajouté avec succès
+      </div>
+      <br/>
+      <div class="alert alert-danger" role="alert" *ngIf="fail" >{{error}}</div>
      </div>
     </div>
    </div>
@@ -18,13 +26,14 @@
      <div class="col-2">
      </div>
      <div class="col-10">
-      <button type="submit" class="btn btn-success mr-2" (click)="demande_post()" >Submit</button>
+      <button type="submit" class="btn btn-success mr-2"  >Submit</button>
       <button type="reset" class="btn btn-secondary">Cancel</button>
      </div>
-     <h1>{{error}}</h1>
     </div>
    </div>
- </div>
+  </form>
+
+  </div>
 
  <div class="content flex-column-fluid" id="kt_content">
   <!--begin::Row-->
@@ -118,3 +127,5 @@
   </div>
   <!--end::Row-->
 </div>
+
+

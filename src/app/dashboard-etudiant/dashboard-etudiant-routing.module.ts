@@ -3,13 +3,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AjouterComponent } from './demandes/ajouter/ajouter.component';
 import { ConsulterComponent } from './demandes/consulter/consulter.component';
-import { AfficherComponent } from './demandes/afficher/afficher.component';
 import { AcceuilEtudiantComponent } from './dashboard/acceuil-etudiant/acceuil-etudiant.component';
 import { ConsulterSujetComponent } from './sujet/consulter-sujet/consulter-sujet.component';
 import { ConsulterStageComponent } from './stage/consulter-stage/consulter-stage.component';
 import { CompleterInfoStageComponent } from './stage/completer-info-stage/completer-info-stage.component';
 import { ConsulterProfileComponent } from './profile/consulter-profile/consulter-profile.component';
 import { CreerComponent } from './sujet/creer/creer.component';
+import { ReclamerComponent } from './reclamer/reclamer.component';
+import { DepotComponent } from './depot/depot.component';
+import { SoutenanceComponent } from './soutenance/soutenance.component';
+import { AjouterBinomeComponent } from './sujet/binome/ajouter-binome/ajouter-binome.component';
+import { AfficherBinomeComponent } from './sujet/binome/afficher-binome/afficher-binome.component';
+import { AfficherEncadrantComponent } from './sujet/encadrant/afficher-encadrant/afficher-encadrant.component';
+import { AjouterEncadrantComponent } from './sujet/encadrant/ajouter-encadrant/ajouter-encadrant.component';
+
 
 
 const routes: Routes = [{
@@ -29,7 +36,24 @@ const routes: Routes = [{
     },
     {
       path:'stage/modifier',component:CompleterInfoStageComponent
-    },//Sujet Routes
+    }
+    ,
+    {
+      path:'sujet/binome/ajouter',component:AjouterBinomeComponent
+    }
+    ,
+    {
+      path:'sujet/binome/consulter',component:AfficherBinomeComponent
+    }
+    ,
+    {
+      path:'sujet/encadrant/ajouter',component:AjouterEncadrantComponent
+    }
+    ,
+    {
+      path:'sujet/encadrant/consulter',component:AfficherEncadrantComponent
+    },
+//Sujet Routes
     {
       path:'sujet',component:ConsulterSujetComponent
     },
@@ -39,6 +63,15 @@ const routes: Routes = [{
     //Sujet Routes
     {
       path:'profile',component:ConsulterProfileComponent
+    },
+    {
+      path:'reclamer',component:ReclamerComponent
+    },
+    {
+      path:'depot',component:DepotComponent
+    },
+    {
+      path:'soutenance',component:SoutenanceComponent
     }
   ]
 }];

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { User } from 'src/app/Models/User';
+import { EtudiantService } from 'src/app/services/etudiant.service';
+import { Etudiant } from 'src/app/Models/Etudiant';
+import { Sujet } from 'src/app/Models/Sujet';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,18 +12,30 @@ import { User } from 'src/app/Models/User';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  private currentUserSubject: BehaviorSubject<User>;
 
-  constructor(private _Router:Router,private _route:ActivatedRoute) {
+  constructor(private _Router:Router,private _route:ActivatedRoute,private _EtudiantService:EtudiantService) {
     this.loadScripts();
    }
-  infos = JSON.parse(localStorage.getItem('userinfo'))
-
+   infos = JSON.parse(localStorage.getItem('userinfo'))
+   nom = this.infos['PRENOM']+this.infos['NOM']
+   sexe = this.infos['SEXE'].trim();
+   etudiant:Etudiant;
+   sujet:Sujet;
+   depose=false;
+   isItTheTime=false;
   ngOnInit(): void {
     let role=localStorage.getItem("role");
     if (role !="etudiant"){
       this._Router.navigate(['/'+role])
     }
+    this.loadetudiant();
+    this.loadsujet();
+    let date=new Date();
+    let comparedDated=new Date(new Date("30-04").setFullYear(new Date().getFullYear()));
+    if (date>=comparedDated){
+      this.isItTheTime=true;
+    }
+
   }
 
   loadScripts() {
@@ -32,6 +47,8 @@ export class DashboardComponent implements OnInit {
      '../../../assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.5',
      '../../../assets/js/pages/custom/projects/list-datatable.js?v=7.0.5',
      '../../../assets/js/pages/crud/ktdatatable/advanced/vertical.js',
+     '../../../assets/js/pages/crud/file-upload/dropzonejs.js?v=7.0.5',
+
 
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {
@@ -44,13 +61,32 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  loadetudiant()
+  {
+    this._EtudiantService.get().subscribe((etudiant:Etudiant)=>{
+      this.etudiant=etudiant
+      });
+  }
+  loadsujet()
+  {
+    this._EtudiantService.getsujet().subscribe((sujet:Sujet)=>{
+      if(sujet)
+      {
+        this.depose=true;
+        this.sujet=sujet
+      }
+      else
+      {
+        this.depose=false;
+      }
+      });
+  }
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
     localStorage.removeItem('userinfo');
     localStorage.removeItem('token');
     localStorage.removeItem('role');
-    this.currentUserSubject.next(null);
-    this._Router.navigate(['/'])
+    this._Router.navigate(['/']);
 }
 }

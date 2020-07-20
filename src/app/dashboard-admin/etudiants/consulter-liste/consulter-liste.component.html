@@ -1,0 +1,151 @@
+<div class="card card-custom">
+  <div class="card-header flex-wrap border-0 pt-6 pb-0">
+    <div class="card-title">
+      <h3 class="card-label">
+        Toutes les demandes de stages.
+        <span class="d-block text-muted pt-2 font-size-sm"
+          >Consultation des demandes de stages.</span
+        >
+      </h3>
+    </div>
+  </div>
+  <div class="card-body">
+    <!--begin: Datatable-->
+
+    <div
+      class="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-loaded"
+      style=""
+    >
+      <table class="datatable-table" style="display: block;">
+        <thead class="datatable-head">
+          <tr class="datatable-row" style="left: 0px;">
+            <th
+              data-field="RecordID"
+              class="datatable-cell-left datatable-cell datatable-cell-sort datatable-cell-sorted"
+              data-sort="desc"
+            >
+              <span style="width: 40px;"
+                >#<i class="flaticon2-arrow-down"></i
+              ></span>
+            </th>
+            <th data-field="OrderID" class="datatable-cell datatable-cell-sort">
+              <span style="width: 250px;">Organisme</span>
+            </th>
+            <th
+              data-field="OrdsserID"
+              class="datatable-cell datatable-cell-sort"
+            >
+              <span style="width: 250px;">Date de soumission</span>
+            </th>
+            <th
+              data-field="OrdsserID"
+              class="datatable-cell datatable-cell-sort"
+            >
+              <span style="width: 250px;">Statut</span>
+            </th>
+
+            <th
+              data-field="Actions"
+              data-autohide-disabled="false"
+              class="datatable-cell datatable-cell-sort"
+            >
+              <span style="width: 130px;">Affecter</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="datatable-body" style="">
+          <tr
+            data-row="0"
+            class="datatable-row"
+            style="left: 0px;"
+            *ngFor="let etudiant of etudiants; let i = index"
+            [attr.data-index]="i"
+          >
+            <td
+              class="datatable-cell-sorted datatable-cell-left datatable-cell"
+              data-field="RecordID"
+              aria-label="1"
+            >
+              <span style="width: 40px;"
+                ><span class="font-weight-bolder"></span>{{ i + 1 }}</span
+              >
+            </td>
+            <td
+              data-field="OrderID"
+              aria-label="61957-1072"
+              class="datatable-cell"
+            >
+              <span style="width: 250px;"
+                ><div class="d-flex align-items-center">
+                  <div class="symbol symbol-40 symbol-circle symbol-sm">
+                    <span class="symbol-label font-size-h4"
+                      >{{ etudiant.NOM.charAt(0) }}
+                    </span>
+                  </div>
+                  <div class="ml-3">
+                    <div
+                      class="text-dark-75 font-weight-bolder font-size-lg mb-0"
+                    >
+                      {{ etudiant.PRENOM }}
+                    </div>
+                    <a class="text-muted font-weight-bold text-hover-primary">
+                      {{ etudiant.DATE_NAISSAINCE }}
+                    </a>
+                  </div>
+                </div></span
+              >
+            </td>
+
+            <td
+              data-field="OrderrID"
+              aria-label="61957-1072"
+              class="datatable-cell"
+            >
+              <span style="width: 250px;"
+                ><div class="d-flex align-items-center">
+                  {{ etudiant.DATE_NAISSAINCE | date: "dd/MM/yyyy" }}
+                </div></span
+              >
+            </td>
+            <td
+              data-field="OrderrID"
+              aria-label="61957-1072"
+              class="datatable-cell"
+            >
+              <span style="width: 250px;"
+                ><div
+                  class="d-flex align-items-center"
+                  [ngClass]="
+                    etudiant.AFFECTATION == 'A'
+                      ? 'text-success'
+                      : 'text-primary'
+                  "
+                >
+                  {{
+                    etudiant.AFFECTATION == "NA"
+                      ? "En attente"
+                      : etudiant.AFFECTATION == "A"
+                      ? "Affectée"
+                      : ""
+                  }}
+                </div></span
+              >
+            </td>
+            <td
+              data-field="Actions"
+              data-autohide-disabled="false"
+              aria-label="null"
+              class="datatable-cell"
+            >
+              <span
+                style="overflow: visible; position: relative; width: 130px;"
+              >
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--end: Datatable-->
+  </div>
+</div>

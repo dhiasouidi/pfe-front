@@ -172,9 +172,9 @@
                 width: 130px;
               "
             >
-              <div class="dropdown dropdown-inline">
+              <div class="dropdown dropdown-inline" *ngIf="demande.ETAT_DEMANDE == 'NA'">
                 <a
-                  [href]="'http://127.0.0.1:8000/pdf/'+demande.ID_DEMANDE"
+                  (click)="print(demande.ID_DEMANDE)"
                   class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon mr-2"
                 >
                   <span class="svg-icon svg-icon-md">
