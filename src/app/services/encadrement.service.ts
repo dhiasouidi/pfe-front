@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SeanceEncadrement } from '../Models/SeanceEncadrement';
 import { apiUrl } from 'src/config';
 import { Sujet } from '../Models/Sujet';
+import { Enseignant } from '../Models/Enseignant';
 
 @Injectable({
   providedIn: 'root'
@@ -43,6 +44,11 @@ export class EncadrementService {
   accepter(id)
   {
     return  this._http.post<any>(apiUrl+'accepterencadrement/'+id,this.header);
+  }
+
+  getencadrant(id)
+  {
+    return  this._http.get<Enseignant>(apiUrl+'enseignant/'+id,this.header);
   }
 
 }

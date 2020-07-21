@@ -11,7 +11,8 @@ import { StageEtudiantService } from 'src/app/services/stage-etudiant.service';
 export class CompleterInfoStageComponent implements OnInit {
 
   constructor(private _StageService:StageEtudiantService) { }
-
+  success=false;
+  dateerr=false;
   TYPE_STAGE:string;
   ORGANISME_STAGE:string;
   TEL_STAGE:Date;
@@ -31,21 +32,21 @@ export class CompleterInfoStageComponent implements OnInit {
     this.TYPE_STAGE=res.TYPE_STAGE;
     this.TEL_STAGE=res.TEL_STAGE;
     this.EMAIL_STAGE=res.EMAIL_STAGE;
+    this.FAX_STAGE=res.FAX_STAGE;
     this.ENCADRANT_STAGE=res.ENCADRANT_STAGE;
     this.ENCADRANT_EMAIL=res.ENCADRANT_EMAIL;
     this.DATE_DEBUT=res.DATE_DEBUT;
     this.DATE_FIN=res.DATE_FIN;
     this.ADRESSE=res.ADRESSE;
     this.DESCRIPTION=res.DESCRIPTION;
-    this.TELEPHONE=res.TELEPHONE;
   });
 }
 
 update()
 {
   let body={
-    TYPE_STAGE:this.TYPE_STAGE,
     TEL_STAGE:this.TEL_STAGE,
+    FAX_STAGE:this.FAX_STAGE,
     EMAIL_STAGE:this.EMAIL_STAGE,
     ENCADRANT_STAGE:this.ENCADRANT_STAGE,
     ENCADRANT_EMAIL:this.ENCADRANT_EMAIL,
@@ -53,11 +54,20 @@ update()
     DATE_FIN:this.DATE_FIN,
     ADRESSE:this.ADRESSE,
     DESCRIPTION:this.DESCRIPTION,
-    TELEPHONE:this.TELEPHONE,
   }
-  this._StageService.update(body).subscribe((res:any)=>{
-    console.log(res)
-  })
+  if(this.DATE_DEBUT>this.DATE_FIN)
+  {
+    this.success=false;
+    this.dateerr=true;
+  }else
+  {
+    this._StageService.update(body).subscribe((res:any)=>{
+      this.dateerr=false;
+      this.success=true;
+      console.log(res)
+    })
+  }
+
   }
 
 }

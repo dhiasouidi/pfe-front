@@ -30,10 +30,10 @@ var KTProjectsAdd = function () {
 					KTUtil.scrollTop();
 				} else {
 					Swal.fire({
-						text: "Sorry, looks like there are some errors detected, please try again.",
+						text: "Désolé, des erreurs dans la formulaire sont détectés.",
 						icon: "error",
 						buttonsStyling: false,
-						confirmButtonText: "Ok, got it!",
+						confirmButtonText: "Fermer",
 						customClass: {
 							confirmButton: "btn font-weight-bold btn-light"
 						}
@@ -58,24 +58,24 @@ var KTProjectsAdd = function () {
 			_formEl,
 			{
 				fields: {
-					projectname: {
+					titreprojet: {
 						validators: {
 							notEmpty: {
-								message: 'Project name is required'
+								message: 'Le titre du projet est obligatoire'
 							}
 						}
 					},
-					projectowner: {
+					abstract: {
 						validators: {
 							notEmpty: {
-								message: 'Project owner is required'
+								message: 'Abstract est obligatoire'
 							}
 						}
 					},
-					customername: {
+					encadrant: {
 						validators: {
 							notEmpty: {
-								message: 'Customer name is required'
+								message: 'Encadrant est obligatoire'
 							}
 						}
 					},

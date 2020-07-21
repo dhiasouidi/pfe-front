@@ -13,7 +13,6 @@ export interface Stage {
   ETUDIANT_ID:string;
   ADRESSE:string;
   DESCRIPTION:string;
-  TELEPHONE:string;
 
 
 }

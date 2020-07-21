@@ -189,27 +189,20 @@
 										</a>
 										<div class="menu-submenu menu-submenu-classic menu-submenu-left">
 											<ul class="menu-subnav">
-                        <li class="menu-item menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true" [routerLink]="['/etudiant/sujet/creer']">
+                        <li class="menu-item menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true" [routerLink]="['/etudiant/sujet/creer']" *ngIf="etudiant.SUJET_ID==null">
 													<a href="javascript:;" class="menu-link menu-toggle">
 														<span class="svg-icon menu-icon">
 														</span>
 														<span class="menu-text">Créer un sujet</span>
 													</a>
                         </li>
-                        <li class="menu-item menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true" *ngIf="etudiant.statut_binome != '2'" [routerLink]="['/etudiant/sujet/binome/ajouter']">
+                        <li class="menu-item menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true" [routerLink]="['/etudiant/sujet/consulter']">
 													<a href="javascript:;" class="menu-link menu-toggle">
 														<span class="svg-icon menu-icon">
 														</span>
-														<span class="menu-text" >Ajouter un binome</span>
+														<span class="menu-text">Consulter mon sujet</span>
 													</a>
                         </li>
-                        <li class="menu-item menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true" *ngIf="etudiant.SUJET_ID == null" [routerLink]="['/etudiant/sujet/encadrant/ajouter']" >
-													<a href="javascript:;" class="menu-link menu-toggle">
-														<span class="svg-icon menu-icon">
-														</span>
-														<span class="menu-text">Ajouter un encadrant</span>
-													</a>
-												</li>
 											</ul>
                     </div>
                   </li>

@@ -15,7 +15,6 @@ export class ConsulterListeComponent implements OnInit {
   ngOnInit(): void {
     this._EtudiantService.getall().subscribe((etudiants:[Etudiant])=>{
       this.etudiants=etudiants
-      console.log(etudiants);
 
   })
 

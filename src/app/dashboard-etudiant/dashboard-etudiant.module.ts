@@ -24,14 +24,17 @@ import { AjouterBinomeComponent } from './sujet/binome/ajouter-binome/ajouter-bi
 import { AfficherBinomeComponent } from './sujet/binome/afficher-binome/afficher-binome.component';
 import { AjouterEncadrantComponent } from './sujet/encadrant/ajouter-encadrant/ajouter-encadrant.component';
 import { AfficherEncadrantComponent } from './sujet/encadrant/afficher-encadrant/afficher-encadrant.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { CreerComponent } from './sujet/creer/creer.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent,AjouterComponent, ConsulterComponent,  SoutenanceComponent, ModifierComponent, ChangerMdpComponent, JournalComponent, ConventionComponent, LettreaffectationComponent, AcceuilEtudiantComponent, ConsulterSujetComponent, ConsulterStageComponent, CompleterInfoStageComponent, ConsulterProfileComponent, OverviewProfileComponent, ReclamerComponent, DepotComponent, AjouterBinomeComponent, AfficherBinomeComponent, AjouterEncadrantComponent, AfficherEncadrantComponent],
+  declarations: [DashboardComponent,AjouterComponent, ConsulterComponent,  SoutenanceComponent, ModifierComponent, ChangerMdpComponent, JournalComponent, ConventionComponent, LettreaffectationComponent, AcceuilEtudiantComponent, ConsulterSujetComponent, ConsulterStageComponent, CompleterInfoStageComponent, ConsulterProfileComponent, OverviewProfileComponent, ReclamerComponent, DepotComponent, AjouterBinomeComponent, AfficherBinomeComponent, AjouterEncadrantComponent, AfficherEncadrantComponent,CreerComponent],
   imports: [
     CommonModule,
     DashboardEtudiantRoutingModule,
-    FormsModule
+    FormsModule,
+    NgSelectModule
   ]
 })
 export class DashboardEtudiantModule { }

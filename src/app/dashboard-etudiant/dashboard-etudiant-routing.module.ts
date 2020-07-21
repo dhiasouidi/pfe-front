@@ -51,7 +51,7 @@ const routes: Routes = [{
     }
     ,
     {
-      path:'sujet/encadrant/consulter',component:AfficherEncadrantComponent
+      path:'sujet/consulter',component:ConsulterSujetComponent
     },
 //Sujet Routes
     {

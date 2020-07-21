@@ -10,6 +10,7 @@ import { ConsulterDemandesEncadrementComponent } from './demandes/consulter-dema
 import { SujetsComponent } from './sujets/sujets.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     DashboardEnseignantRoutingModule,
-    FormsModule
+    FormsModule,
+    NgSelectModule
 
   ]
 })

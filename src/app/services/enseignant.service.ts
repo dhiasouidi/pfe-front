@@ -20,4 +20,18 @@ export class EnseignantService {
   getall():Observable<[Enseignant]>{
     return this._http.get<[Enseignant]>(apiUrl+'enseignantall',this.header)
   }
+
+  add(body){
+
+    return  this._http.post(apiUrl+'enseignantsave',body,this.header);
+
+  }
+  modifier(id,body)
+  {
+      return  this._http.put(apiUrl+'enseignant/update/'+id,body,this.header);
+  }
+  getbyid(id):Observable<Enseignant>{
+    return  this._http.get<Enseignant>(apiUrl+'enseignant/'+id,this.header);
+    }
+
 }

@@ -48,6 +48,7 @@ export class DashboardComponent implements OnInit {
      '../../../assets/js/pages/custom/projects/list-datatable.js?v=7.0.5',
      '../../../assets/js/pages/crud/ktdatatable/advanced/vertical.js',
      '../../../assets/js/pages/crud/file-upload/dropzonejs.js?v=7.0.5',
+     '../../../assets/js/pages/custom/projects/add-project.js?v=7.0.5',
 
 
     ];

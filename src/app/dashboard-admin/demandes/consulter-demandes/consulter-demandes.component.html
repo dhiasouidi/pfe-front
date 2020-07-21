@@ -42,12 +42,7 @@
         >
           <span style="width: 250px;">Date de soumission</span>
         </th>
-        <th
-        data-field="OrdsserID"
-        class="datatable-cell datatable-cell-sort"
-      >
-        <span style="width: 250px;">Statut</span>
-        </th>
+
 
           <th
             data-field="Actions"
@@ -97,12 +92,14 @@
                     {{demande.ORGANISME_DEMANDE}}
                   </div>
                   <a
-
                     class="text-muted font-weight-bold text-hover-primary"
                     > {{(demande.TYPE_DEMANDE=="pfe"?"Stage de PFE":demande.TYPE_DEMANDE=="mpro"?"Stage Mastère Pro":"Stage d'été")
-
                     }} </a
-                  >
+                  ><br>
+                  <a
+                  class="text-muted font-weight-bold text-hover-primary"
+                  > {{demande.ETUDIANT_DEMANDE}} </a
+                >
                 </div>
               </div></span
             >
@@ -119,18 +116,7 @@
             </div></span
           >
         </td>
-        <td
-        data-field="OrderrID"
-        aria-label="61957-1072"
-        class="datatable-cell"
-        >
-        <span style="width: 250px;"
-          ><div class="d-flex align-items-center"
-          [ngClass]="demande.ETAT_DEMANDE == 'A' ? 'text-success': 'text-primary'" >
-            {{(demande.ETAT_DEMANDE=="NA"?"En attente":demande.ETAT_DEMANDE=="A"?"Affectée":"")}}
-          </div></span
-        >
-      </td>
+
           <td
             data-field="Actions"
             data-autohide-disabled="false"
@@ -206,7 +192,7 @@
             <i aria-hidden="true" class="ki ki-close"></i>
           </button>
         </div>
-        <div class="modal-body"></div>
+        <div class="modal-body">Voulez-vous affecter ce stage ?</div>
         <div class="modal-footer">
           <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Fermer</button>
           <button type="button" class="btn btn-primary font-weight-bold" data-dismiss="modal" (click)="affecter(modelid,modelindex)">Affecter</button>

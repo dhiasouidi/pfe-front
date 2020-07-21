@@ -6,6 +6,17 @@ import { ConsulterDemandesComponent } from './demandes/consulter-demandes/consul
 import { ConsulterProfileComponent } from './profile/consulter-profile/consulter-profile.component';
 import { ConsulterListeComponent } from './etudiants/consulter-liste/consulter-liste.component';
 import { ConsulterListeEnseignantsComponent } from './enseignant/consulter-liste-enseignants/consulter-liste-enseignants.component';
+import { SoutenanceComponent } from '../dashboard-etudiant/soutenance/soutenance.component';
+import { ConsulterComponent } from './soutenances/consulter/consulter.component';
+import { ModifierComponent } from '../dashboard-etudiant/profile/modifier/modifier.component';
+import { ModifierEtudiantComponent } from './etudiants/modifier/modifier-etudiant/modifier-etudiant.component';
+import { AjouterComponent } from './etudiants/ajouter/ajouter.component';
+import { AjouterEnseignantComponent } from './enseignant/ajouter-enseignant/ajouter-enseignant.component';
+import { ModifierEnseignantComponent } from './enseignant/modifier/modifier-enseignant/modifier-enseignant.component';
+import { ConsulterListeStagesComponent } from './stages/consulter-liste-stages/consulter-liste-stages.component';
+import { ModifierStageComponent } from './stages/modifier-stage/modifier-stage.component';
+import { ConsulterListeSujetsComponent } from './sujets/consulter-liste-sujets/consulter-liste-sujets.component';
+import { ModifierSujetComponent } from './sujets/modifier-sujet/modifier-sujet.component';
 
 
 const routes: Routes = [{
@@ -23,8 +34,36 @@ const routes: Routes = [{
         {//Acceuil
           path:'etudiants',component:ConsulterListeComponent
         },
+                {//Acceuil
+                  path:'etudiant/modifier/:id',component:ModifierEtudiantComponent
+                },
+                                {//Acceuil
+                                  path:'etudiant/ajouter',component:AjouterComponent
+                                },
         {//Acceuil
           path:'enseignants',component:ConsulterListeEnseignantsComponent
+        },
+                {//Acceuil
+                  path:'enseignant/ajouter',component:AjouterEnseignantComponent
+                },
+                {//Acceuil
+                  path:'enseignant/modifier/:id',component:ModifierEnseignantComponent
+                },
+        {//Acceuil
+          path:'soutenances',component:ConsulterComponent
+        },
+                {//Acceuil
+                  path:'stages',component:ConsulterListeStagesComponent
+                },
+                                {//Acceuil
+                                  path:'stage/modifier/:id',component:ModifierStageComponent
+                                },
+
+                    {//Acceuil
+          path:'sujets',component:ConsulterListeSujetsComponent
+        },
+         {//Acceuil
+          path:'sujet/modifier/:id',component:ModifierSujetComponent
         },
 
   ]

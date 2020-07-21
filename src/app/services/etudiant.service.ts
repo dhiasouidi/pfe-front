@@ -22,6 +22,9 @@ export class EtudiantService {
   get():Observable<Etudiant>{
     return  this._http.get<Etudiant>(apiUrl+'currentetudiant',this.header);
     }
+    getbyid(id):Observable<Etudiant>{
+      return  this._http.get<Etudiant>(apiUrl+'etudiant/'+id,this.header);
+      }
     getall():Observable<[Etudiant]>{
       return this._http.get<[Etudiant]>(apiUrl+'etudiantall',this.header)
     }
@@ -33,4 +36,16 @@ export class EtudiantService {
     update(body){
       return  this._http.put(apiUrl+'updateinfos',body,this.header);
       }
+
+      modifier(id,body)
+      {
+          return  this._http.post(apiUrl+'etudiant/update/'+id,body,this.header);
+      }
+
+      ajouter(body)
+      {
+        return  this._http.post(apiUrl+'etudiantsave',body,this.header);
+
+      }
+
 }
