@@ -41,5 +41,8 @@ export class SujetService {
   {
     return this._http.get<Sujet>(apiUrl+'sujet/'+id,this.header);
   }
+  update(id,body){
+    return  this._http.post(apiUrl+'sujet/modifier/'+id,body,this.header);
+  }
 
 }

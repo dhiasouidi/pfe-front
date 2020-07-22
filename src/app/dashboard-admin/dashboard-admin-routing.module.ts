@@ -17,6 +17,8 @@ import { ConsulterListeStagesComponent } from './stages/consulter-liste-stages/c
 import { ModifierStageComponent } from './stages/modifier-stage/modifier-stage.component';
 import { ConsulterListeSujetsComponent } from './sujets/consulter-liste-sujets/consulter-liste-sujets.component';
 import { ModifierSujetComponent } from './sujets/modifier-sujet/modifier-sujet.component';
+import { ConsulterListeReclamationsComponent } from './reclamations/consulter-liste-reclamations/consulter-liste-reclamations.component';
+import { ConsulterReclamationComponent } from './reclamations/consulter-reclamation/consulter-reclamation.component';
 
 
 const routes: Routes = [{
@@ -62,8 +64,15 @@ const routes: Routes = [{
                     {//Acceuil
           path:'sujets',component:ConsulterListeSujetsComponent
         },
+
          {//Acceuil
           path:'sujet/modifier/:id',component:ModifierSujetComponent
+        },
+                  {//Acceuil
+                    path:'reclamations',component:ConsulterListeReclamationsComponent
+                  },
+        {//Acceuil
+          path:'reclamation/:id',component:ConsulterReclamationComponent
         },
 
   ]

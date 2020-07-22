@@ -19,9 +19,24 @@ export class ModifierSujetComponent implements OnInit {
 
     this._SujetService.getbyid(this.id).subscribe((sujet:Sujet)=>{
     this.sujet=sujet
-    console.log(sujet);
 
 })
+  }
+
+  update()
+  {
+    let body={
+      TITRE_SUJET:this.sujet.TITRE_SUJET,
+    }
+
+    this._SujetService.update(this.id,body).subscribe(
+      data=>{
+        if (data)
+        this.success=true;
+        console.log(data)
+      },error => console.log(error)
+
+    )
   }
 
 }

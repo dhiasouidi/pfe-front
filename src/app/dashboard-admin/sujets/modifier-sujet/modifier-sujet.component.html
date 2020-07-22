@@ -1,1 +1,40 @@
-<p>modifier-sujet works!</p>
+<div class="card card-custom gutter-bs">
+  <div class="card-header py-3">
+    <div class="card-title align-items-start flex-column">
+      <h3 class="card-label font-weight-bolder text-dark">Informations sur le stage</h3>
+      <span class="text-muted font-weight-bold font-size-sm mt-1">Modifer les informaitons du stage</span>
+    </div>
+    <div class="card-toolbar">
+      <button type="reset" class="btn btn-success mr-2" (click)="update()" >Enregistrer</button>
+    </div>
+  </div>
+  <!--begin::Body-->
+  <div class="card-body px-0">
+    <div class="tab-content pt-5">
+      <!--begin::Tab Content-->
+      <div class="tab-pane active" id="kt_apps_projects_view_tab_2" role="tabpanel" >
+
+        <div class="row">
+          <div class="col-lg-9 col-xl-6 offset-xl-3">
+            <div class="alert alert-success" role="alert"*ngIf="success">
+              Sujet modifié avec succès
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9 col-xl-6 offset-xl-3">
+              <h3 class="font-size-h6 mb-5">Détails sujet:</h3>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-xl-3 col-lg-3 col-form-label text-right">Titre </label>
+            <div class="col-lg-9 col-xl-6">
+              <input class="form-control form-control-lg form-control-solid" placeholder="Titre " type="text" value=""  [(ngModel)]="sujet.TITRE_SUJET"/>
+            </div>
+          </div>
+      </div>
+      <!--end::Tab Content-->
+    </div>
+  </div>
+  <!--end::Body-->
+</div>

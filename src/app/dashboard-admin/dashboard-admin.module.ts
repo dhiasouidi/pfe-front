@@ -23,10 +23,12 @@ import { ConsulterListeStagesComponent } from './stages/consulter-liste-stages/c
 import { ConsulterListeSujetsComponent } from './sujets/consulter-liste-sujets/consulter-liste-sujets.component';
 import { ModifierStageComponent } from './stages/modifier-stage/modifier-stage.component';
 import { ModifierSujetComponent } from './sujets/modifier-sujet/modifier-sujet.component';
+import { ConsulterListeReclamationsComponent } from './reclamations/consulter-liste-reclamations/consulter-liste-reclamations.component';
+import { ConsulterReclamationComponent } from './reclamations/consulter-reclamation/consulter-reclamation.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, AcceuilAdminComponent, ConsulterDemandesComponent, ConsulterProfileComponent, ConsulterProfileComponent, ChangerMdpComponent, ModifierComponent, ConsulterListeComponent, ConsulterListeEnseignantsComponent, ModifierEtudiantComponent, ModifierEnseignantComponent, AjouterComponent, ConsulterComponent, AffecterComponent, ParametresComponent, AjouterEnseignantComponent, ConsulterListeStagesComponent, ConsulterListeSujetsComponent, ModifierStageComponent, ModifierSujetComponent],
+  declarations: [DashboardComponent, AcceuilAdminComponent, ConsulterDemandesComponent, ConsulterProfileComponent, ConsulterProfileComponent, ChangerMdpComponent, ModifierComponent, ConsulterListeComponent, ConsulterListeEnseignantsComponent, ModifierEtudiantComponent, ModifierEnseignantComponent, AjouterComponent, ConsulterComponent, AffecterComponent, ParametresComponent, AjouterEnseignantComponent, ConsulterListeStagesComponent, ConsulterListeSujetsComponent, ModifierStageComponent, ModifierSujetComponent, ConsulterListeReclamationsComponent, ConsulterReclamationComponent],
   imports: [
     CommonModule,
     DashboardAdminRoutingModule,

@@ -3,7 +3,7 @@ export interface Soutenance {
   ID_SOUTENANCE:number;
   TAUX_PLAGIAT:string;
   DATE_SOUTENANCE:Date;
-  FORME:Date;
+  FORME:string;
   ORIGINALITE:string;
   METHODOLOGIE:string;
   ORAL:string;

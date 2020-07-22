@@ -2,7 +2,7 @@
   <div class="card-header flex-wrap border-0 pt-6 pb-0">
     <div class="card-title">
       <h3 class="card-label">
-        Consultation des soutenances.
+        Consultation des étudiants.
       </h3>
     </div>
   </div>
@@ -26,28 +26,11 @@
               ></span>
             </th>
             <th data-field="OrderID" class="datatable-cell datatable-cell-sort">
-              <span style="width: 250px;">Soutenance</span>
+              <span style="width: 250px;">Objet</span>
             </th>
-            <th
-              data-field="OrdsserID"
-              class="datatable-cell datatable-cell-sort"
-            >
-              <span style="width: 250px;">Salle</span>
+            <th data-field="OrderID" class="datatable-cell datatable-cell-sort">
+              <span style="width: 250px;">Consulter</span>
             </th>
-            <th
-              data-field="Actions"
-              data-autohide-disabled="false"
-              class="datatable-cell datatable-cell-sort"
-            >
-              <span style="width: 130px;">Date Soutenance</span>
-            </th>
-            <th
-            data-field="Actions"
-            data-autohide-disabled="false"
-            class="datatable-cell datatable-cell-sort"
-          >
-            <span style="width: 130px;">Consulter</span>
-          </th>
           </tr>
         </thead>
         <tbody class="datatable-body" style="">
@@ -55,7 +38,7 @@
             data-row="0"
             class="datatable-row"
             style="left: 0px;"
-            *ngFor="let soutenance of soutenances; let i = index"
+            *ngFor="let reclamation of reclamations; let i = index"
             [attr.data-index]="i"
           >
             <td
@@ -72,59 +55,21 @@
               aria-label="61957-1072"
               class="datatable-cell"
             >
+            {{ reclamation.OBJET }}
               <span style="width: 250px;"
                 ><div class="d-flex align-items-center">
-                  <div class="ml-3">
-                    <div
-                      class="text-dark-75 font-weight-bolder font-size-lg mb-0"
-                    >{{ soutenance.ID_SOUTENANCE }}
-                  </div>
-                  </div>
-                </div></span
-              >
-            </td>
+                  <div class="symbol symbol-40 symbol-circle symbol-sm">
 
-            <td
-              data-field="OrderrID"
-              aria-label="61957-1072"
-              class="datatable-cell"
-            >
-              <span style="width: 250px;"
-                ><div class="d-flex align-items-center">
-                  {{ soutenance.SALLE }}
+                  </div>
                 </div></span
               >
+
             </td>
-            <td
-            data-field="OrderrID"
-            aria-label="61957-1072"
-            class="datatable-cell"
-          >
-            <span style="width: 250px;"
-              ><div class="d-flex align-items-center">
-                {{ soutenance.DATE_SOUTENANCE }}
-              </div></span
-            >
-          </td>
-            <td
-              data-field="OrderrID"
-              aria-label="61957-1072"
-              class="datatable-cell"
-            >
-            </td>
-            <td
-              data-field="Actions"
-              data-autohide-disabled="false"
-              aria-label="null"
-              class="datatable-cell"
-            >
-              <span
-                style="overflow: visible; position: relative; width: 130px;"
-              >
-              <div class="dropdown dropdown-inline" >
+            <td>
+              <div class="dropdown dropdown-inline"  >
                 <a
                   class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon mr-2"
-                  [routerLink]="['/admin/soutenance/'+soutenance.ID_SOUTENANCE]"
+                  [routerLink]="['/admin/reclamation/'+reclamation.id]"
                 >
                   <span class="svg-icon svg-icon-md">
                     <svg
@@ -162,8 +107,8 @@
                   </span>
                 </a>
               </div>
-              </span>
             </td>
+
 
           </tr>
         </tbody>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Soutenance } from 'src/app/Models/Soutenance';
 
 @Component({
   selector: 'app-consulter',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ConsulterComponent implements OnInit {
 
   constructor() { }
+  soutenances:[Soutenance]
 
   ngOnInit(): void {
   }
